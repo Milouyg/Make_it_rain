@@ -2,6 +2,7 @@
 
 ## naam
 Naam: Milou Geervliet
+Klas: 1D
 
 ## poject
 Mijn project is een website maken die games verkoopt. 
