@@ -14,7 +14,7 @@ html {
 } */
 
 /* header */
-header {
+.header_navigatie {
     background: #7256c0;
     width: 100%;
     height: 6rem;
