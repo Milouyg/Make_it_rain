@@ -7,3 +7,13 @@
 //         counter = 1;
 //     }
 // }, 5000)
+
+function show() {
+    var show = document.getElementById("container_logIn");
+    if (show.style.display == "block"){
+        show.style.display = "none";
+    }
+    else{
+        show.style.display = "block";
+    }
+}

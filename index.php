@@ -1,6 +1,13 @@
+<?php
+require "functions.php"; // mag ook include zijn
+$connection = dbConnect();
+
+$result = $connection->query("SELECT * FROM `games`");
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +15,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/fotoslider.css">
     <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/log_in.css">
     <script src="https://kit.fontawesome.com/b1a8b29774.js" crossorigin="anonymous"></script>
     <script src="script.js" defer></script>
     <title>Notice Games</title>
@@ -34,7 +42,26 @@
                     <li><a href="">Contact</a></li>
                 </menu>
             </nav>
-            <button class="inloggen">Inloggen</button>
+            <button class="log_in" id="show" onclick="show()">Inloggen</button>
+                <div class="container_logIn">
+                    <label for="show" class="close_btn fas fa-times"></label>
+                    <div class="text">Login Form</div>
+                    <form action="#">
+                        <div class="data">
+                            <label for="">Email or Telefoon</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="data">
+                            <label for="">Wachtwoord</label>
+                            <input type="password" required>
+                            <div class="forgot_password"><a href="#">Wachtwoord vergeten</a></div>
+                        </div>
+                            <button class="form_log_in" type="submit">Inloggen</button>
+                            <div class="sign_up">Nog geen lid? <a class="make_acc" href=""> Maak hier een account</a></div>
+                        </div>
+                    </form>
+            </div>
+            
         </div>
     </header>
 
@@ -94,59 +121,26 @@
             </div>
             <!-- product card -->
             <div class="container_trending_cards">
+                <?php foreach($result as $row):?>
                 <article class="trending_card">
                     <figure>
-                        <img class="product_card" src="https://via.placeholder.com/300x375" alt="">
+                        <img class="product_card" src="img/minecraft.jpg" alt="">
                     </figure>
                     <div class="box_text">
-                        <h2 class="titel_game">Minecraft</h2>
-                        <h3 class="genre">Sandbox</h3>
-                        <span class="price">prijs</span>
-                        <span class="percentage">80</span>
-                        <a class="view" href="">weergave</a>
+                        <h2 class="titel_game"><?php echo $row["titel"];?></h2>
+                        <h3 class="genre"><?php echo $row["genre"]?></h3>
+                        <span class="price"><?php echo $row["prijzen"];?></span>
+                        <span class="percentage"><?php echo $row["beoordelingen"];?></span>
+                        <a class="view" href=""><?php echo $row["weergave"];?></a>
                     </div>
                 </article>
-                <article class="trending_card">
-                    <figure>
-                        <img class="product_card" src="https://via.placeholder.com/300x375" alt="">
-                    </figure>
-                    <div class="box_text">
-                        <h2 class="titel_game">Minecraft</h2>
-                        <h3 class="genre">Sandbox</h3>
-                        <span class="price">prijs</span>
-                        <span class="percentage">80</span>
-                        <a class="view" href="">weergave</a>
-                    </div>
-                </article>
-                <article class="trending_card">
-                    <figure>
-                        <img class="product_card" src="https://via.placeholder.com/300x375" alt="">
-                    </figure>
-                    <div class="box_text">
-                        <h2 class="titel_game">Minecraft</h2>
-                        <h3 class="genre">Sandbox</h3>
-                        <span class="price">prijs</span>
-                        <span class="percentage">80</span>
-                        <a class="view" href="">weergave</a>
-                    </div>
-                </article>
-                <article class="trending_card">
-                    <figure>
-                        <img class="product_card" src="https://via.placeholder.com/300x375" alt="">
-                    </figure>
-                    <div class="blurred">
-                        <div class="box_text">
-                            <h2 class="titel_game">Minecraft</h2>
-                            <h3 class="genre">Sandbox</h3>
-                            <span class="price">prijs</span>
-                            <span class="percentage">80</span>
-                            <a class="view" href="">weergave</a>
-                        </div>
-                    </div>
-                </article>
-
+                <?php endforeach; ?>
             </div>
 
+
+        </section>
+        <!-- game section -->
+        <section>
 
         </section>
     </main>
