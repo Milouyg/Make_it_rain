@@ -71,7 +71,7 @@ menu li a:hover {
     color: black;
 }
 
-.inloggen {
+.log_in{
     color: white;
     font-size: 2rem;
     text-align: center;
@@ -81,7 +81,7 @@ menu li a:hover {
     border-radius: 1.5rem;
 }
 
-.inloggen:hover {
+.log_in:hover {
     color: black;
 }
 
