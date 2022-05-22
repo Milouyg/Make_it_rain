@@ -3,7 +3,6 @@ require "functions.php"; // mag ook include zijn
 $connection = dbConnect();
 
 $result = $connection->query("SELECT * FROM `games`");
-
 ?>
 
 <!DOCTYPE html>
