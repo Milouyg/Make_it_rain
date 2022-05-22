@@ -130,7 +130,7 @@ $result = $connection->query("SELECT * FROM `games`");
                         <h3 class="genre"><?php echo $row["genre"]?></h3>
                         <span class="price"><?php echo $row["prijzen"];?></span>
                         <span class="percentage"><?php echo $row["beoordelingen"];?></span>
-                        <a class="view" href=""><?php echo $row["weergave"];?></a>
+                        <a class="view" href="">weergave></a>
                     </div>
                 </article>
                 <?php endforeach; ?>
