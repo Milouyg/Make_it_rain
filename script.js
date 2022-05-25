@@ -8,6 +8,7 @@
 //     }
 // }, 5000)
 
+// Login systeem
 function show() {
     var show = document.getElementById("container_logIn");
     if (show.style.display == "block"){
@@ -17,3 +18,4 @@ function show() {
         show.style.display = "block";
     }
 }
+

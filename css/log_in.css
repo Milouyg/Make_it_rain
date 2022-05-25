@@ -1,46 +1,47 @@
-.container_logIn{
+.container_logIn {
     display: none;
     position: absolute;
     top: 34%;
     left: 52%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    top: 26rem;
 }
 
-.container .close_btn{
+.container .close_btn {
     font-size: 150%;
     cursor: pointer;
 }
 
-.container_logIn{
+.container_logIn {
     background: white;
     width: 25%;
     height: auto;
     padding: 3rem;
-    box-shadow: 0 0 8px rgba(0,0,0,0.4);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
 }
 
-.container .text{
+.container .text {
     font-size: 200%;
     text-align: center;
     font-weight: 600;
 }
 
-.container form{
+.container form {
     margin-top: -2rem;
 }
 
-.container form .data{
+.container form .data {
     height: 4.5rem;
     width: 100%;
     margin: 4rem 0;
 }
 
-form .data label{
+form .data label {
     font-size: 1.8rem;
 }
 
-form .data input{
+form .data input {
     height: 100%;
     width: 100%;
     padding-left: 1rem;
@@ -49,23 +50,23 @@ form .data input{
     border: 0.1rem solid silver;
 }
 
-form .data input:focus{
+form .data input:focus {
     border-color: red;
     border-bottom-width: 0.2rem;
 }
 
-form .forgot_password a{
+form .forgot_password a {
     text-decoration: none;
     font-size: 150%;
     position: absolute;
-    top: 60%;
+    top: 63%;
 }
 
-form .forgot_password a:hover{
+form .forgot_password a:hover {
     text-decoration: underline;
 }
 
-.form_log_in{
+.form_log_in {
     width: 100%;
     height: 5rem;
     margin-top: 2rem;
@@ -75,16 +76,16 @@ form .forgot_password a:hover{
     border-radius: 0.5rem;
 }
 
-.sign_up{
+.sign_up {
     font-size: 150%;
     padding: 1rem 0 0 0;
     text-align: center;
 }
 
-.make_acc{
+.make_acc {
     text-decoration: none;
 }
 
-.make_acc:hover{
+.make_acc:hover {
     text-decoration: underline;
 }

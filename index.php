@@ -7,6 +7,7 @@ $result = $connection->query("SELECT * FROM `games`");
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,26 +42,26 @@ $result = $connection->query("SELECT * FROM `games`");
                     <li><a href="">Contact</a></li>
                 </menu>
             </nav>
-            <button class="log_in" id="show" onclick="show()">Inloggen</button>
-                <div class="container_logIn">
-                    <label for="show" class="close_btn fas fa-times"></label>
-                    <div class="text">Login Form</div>
-                    <form action="#">
-                        <div class="data">
-                            <label for="">Email or Telefoon</label>
-                            <input type="text" required>
-                        </div>
-                        <div class="data">
-                            <label for="">Wachtwoord</label>
-                            <input type="password" required>
-                            <div class="forgot_password"><a href="#">Wachtwoord vergeten</a></div>
-                        </div>
-                            <button class="form_log_in" type="submit">Inloggen</button>
-                            <div class="sign_up">Nog geen lid? <a class="make_acc" href=""> Maak hier een account</a></div>
-                        </div>
-                    </form>
+            <button class="log_in" onclick="show()">Inloggen</button>
+            <div class="container_logIn" id="container_logIn">
+                <label for="show" class="close_btn fas fa-times"></label>
+                <div class="text">Login Form</div>
+                <form action="#">
+                    <div class="data">
+                        <label for="">Email or Telefoon</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="data">
+                        <label for="">Wachtwoord</label>
+                        <input type="password" required>
+                        <div class="forgot_password"><a href="#">Wachtwoord vergeten</a></div>
+                    </div>
+                    <button class="form_log_in" type="submit">Inloggen</button>
+                    <div class="sign_up">Nog geen lid? <a class="make_acc" href=""> Maak hier een account</a></div>
             </div>
-            
+            </form>
+        </div>
+
         </div>
     </header>
 
@@ -116,23 +117,35 @@ $result = $connection->query("SELECT * FROM `games`");
                 <div class="header" id="trending">
                     <i class="fa-solid fa-fire-flame-curved"></i>
                     <h2 class="kopje_trending_games">Trending Games</h2>
+                </div>
             </header>
+            <div class="inputs_trending_game">
+                <input id="checkbox-sandbox" type="checkbox" class="filter"> 
+                <label for="checkbox-sandbox">Sandbox</label>
+                <input id="checkbox-co-op" type="checkbox" class="filter"> 
+                <label for="checkbox-co-op">Co-op</label>
+                <input id="checkbox-sport" type="checkbox" class="filter"> 
+                <label for="checkbox-sport">Sport</label>
+                <input id="checkbox-shooter" type="checkbox" class="filter">
+                <label for="checkbox-shooter">Shooter</label>
+                <input id="checkbox-action" type="checkbox" class="filter"> 
+                <label for="checkbox-action">Action</label>
             </div>
             <!-- product card -->
             <div class="container_trending_cards">
-                <?php foreach($result as $row):?>
-                <article class="trending_card">
-                    <figure>
-                        <img class="product_card" src="img/minecraft.jpg" alt="">
-                    </figure>
-                    <div class="box_text">
-                        <h2 class="titel_game"><?php echo $row["titel"];?></h2>
-                        <h3 class="genre"><?php echo $row["genre"]?></h3>
-                        <span class="price"><?php echo $row["prijzen"];?></span>
-                        <span class="percentage"><?php echo $row["beoordelingen"];?></span>
-                        <a class="view" href="">weergave></a>
-                    </div>
-                </article>
+                <?php foreach ($result as $row) : ?>
+                    <article class="trending_card">
+                        <figure>
+                            <img class="product_card" src="img/<?php echo $row["img_link"] ?>" alt="">
+                        </figure>
+                        <div class="box_text">
+                            <h2 class="titel_game"><?php echo $row["titel"]; ?></h2>
+                            <h3 class="genre"><?php echo $row["genre"] ?></h3>
+                            <span class="price"><?php echo $row["prijzen"]; ?></span>
+                            <span class="percentage"><?php echo $row["beoordelingen"]; ?>%</span>
+                            <a class="view" href="">weergave</a>
+                        </div>
+                    </article>
                 <?php endforeach; ?>
             </div>
 

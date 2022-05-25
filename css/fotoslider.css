@@ -44,7 +44,7 @@ figure>.foto {
 }
 
 .manual_btn {
-    border: 0.5rem solid greenyellow;
+    border: 0.5rem solid #7256c0;
     padding: 2%;
     border-radius: 50%;
     cursor: pointer;
@@ -86,7 +86,7 @@ figure>.foto {
 }
 
 .navigatie_auto nav {
-    border: 1rem solid greenyellow;
+    border: 1rem solid #7256c0;
     padding: 2.5rem;
     border-radius: 5rem;
     cursor: pointer;

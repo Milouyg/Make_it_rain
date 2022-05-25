@@ -28,6 +28,23 @@
     padding: 1rem;
 }
 
+.inputs_trending_game{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 150%;
+}
+
+.filter{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    
+}
+
 /* <!-- product card --> */
 .container_trending_cards {
     max-width: 144rem;
@@ -38,17 +55,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: red;
     position: relative;
     gap: 1.75rem;
 }
 
+.container_trending_cards .trending_card figure img{
+    width: 30rem;
+    height: 40rem;
+    object-fit: cover;
+}
+
 .trending_card {
-    background: green;
     height: 40%;
     position: relative;
     display: flex;
     gap: 1rem;
+    transform: translateX();
 }
 
 .trending_card:hover{
@@ -59,12 +81,12 @@
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
-    
+    width: 100%;
 }
 
 .box_text {
     position: absolute;
-    width: 100%;
+    width: 100.8%;
     height: 30%;
     bottom: 0;
     left: 0;
