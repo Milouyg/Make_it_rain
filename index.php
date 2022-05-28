@@ -2,7 +2,9 @@
 require "functions.php"; // mag ook include zijn
 $connection = dbConnect();
 
-$result = $connection->query("SELECT * FROM `games`");
+$trending_games = $connection->query("SELECT * FROM `games` WHERE beoordelingen > 93");
+$games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
+
 ?>
 
 <!DOCTYPE html>
@@ -120,21 +122,18 @@ $result = $connection->query("SELECT * FROM `games`");
                 </div>
             </header>
             <div class="inputs_trending_game">
-                <input id="checkbox-sandbox" type="checkbox" class="filter"> 
+                <input id="checkbox-sandbox" type="checkbox" class="filter_trending_cards"> 
                 <label for="checkbox-sandbox">Sandbox</label>
-                <input id="checkbox-co-op" type="checkbox" class="filter"> 
+                <input id="checkbox-co-op" type="checkbox" class="filter_trending_cards"> 
                 <label for="checkbox-co-op">Co-op</label>
-                <input id="checkbox-sport" type="checkbox" class="filter"> 
-                <label for="checkbox-sport">Sport</label>
-                <input id="checkbox-shooter" type="checkbox" class="filter">
-                <label for="checkbox-shooter">Shooter</label>
-                <input id="checkbox-action" type="checkbox" class="filter"> 
-                <label for="checkbox-action">Action</label>
+                <input id="checkbox-role-play" type="checkbox" class="filter_trending_cards"> 
+                <label for="checkbox-role-play">Role-play</label>
+
             </div>
-            <!-- product card -->
+            <!-- games -->
             <div class="container_trending_cards">
-                <?php foreach ($result as $row) : ?>
-                    <article class="trending_card">
+                <?php foreach ($trending_games as $row) : ?>
+                    <article class="trending_card" data-category="<?php echo $row["genre"] ?>">
                         <figure>
                             <img class="product_card" src="img/<?php echo $row["img_link"] ?>" alt="">
                         </figure>
@@ -149,6 +148,28 @@ $result = $connection->query("SELECT * FROM `games`");
                 <?php endforeach; ?>
             </div>
 
+            <header class="header_trending">
+                <div class="header" id="trending">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                    <h2 class="kopje_trending_games">Games</h2>
+                </div>
+            </header>
+            <div class="container_trending_cards">
+                <?php foreach ($games as $row) : ?>
+                    <article class="trending_card">
+                        <figure>
+                            <img class="product_card" src="img/<?php echo $row["img_link"] ?>" alt="">
+                        </figure>
+                        <div class="box_text">
+                            <h2 class="titel_game"><?php echo $row["titel"]; ?></h2>
+                            <h3 class="genre"><?php echo $row["genre"] ?></h3>
+                            <span class="price"><?php echo $row["prijzen"]; ?></span>
+                            <span class="percentage"><?php echo $row["beoordelingen"]; ?>%</span>
+                            <a class="view" href="">weergave</a>
+                        </div>
+                    </article>
+                <?php endforeach; ?>
+            </div>
 
         </section>
         <!-- game section -->
