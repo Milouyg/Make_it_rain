@@ -4,7 +4,6 @@ $connection = dbConnect();
 
 $trending_games = $connection->query("SELECT * FROM `games` WHERE beoordelingen > 93");
 $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
-
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +13,7 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/fotoslider.css">
     <link rel="stylesheet" href="css/game.css">
@@ -27,13 +27,13 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
     <!-- Navigatie -->
     <header class="header_navigatie">
         <div class="container">
-            <label class="mobile_menu" for="">
-                <i class="fa fa-bars"></i>
+            <label class="mobile_menu" for="icon">
+                <i for="icon" class="fa fa-bars"></i>
             </label>
             <figure class="logo">
-                <img class="google" src="img/testlogo.png" alt="">
+                <img class="google" src="img/logo.png" alt="">
             </figure>
-            <form class="search_box" action="">
+            <form class="search_box" for="#">
                 <input type="text" placeholder="games">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
@@ -50,19 +50,18 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
                 <div class="text">Login Form</div>
                 <form action="#">
                     <div class="data">
-                        <label for="">Email or Telefoon</label>
+                        <label for="#">Email or Telefoon</label>
                         <input type="text" required>
                     </div>
                     <div class="data">
-                        <label for="">Wachtwoord</label>
+                        <label for="#">Wachtwoord</label>
                         <input type="password" required>
                         <div class="forgot_password"><a href="#">Wachtwoord vergeten</a></div>
                     </div>
                     <button class="form_log_in" type="submit">Inloggen</button>
                     <div class="sign_up">Nog geen lid? <a class="make_acc" href=""> Maak hier een account</a></div>
+                </form>
             </div>
-            </form>
-        </div>
 
         </div>
     </header>
@@ -79,19 +78,19 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
 
                     <!-- slide image begin -->
                     <figure class="slide first">
-                        <img class="foto" src="img/TestFoto.jpg" alt="">
+                        <img class="foto" src="img_fotoSlider/horizon.webp" alt=""> <!-- 1444x600 -->
                     </figure>
 
                     <figure class="slide">
-                        <img class="foto" src="https://via.placeholder.com/1440x600" alt="">
+                        <img class="foto" src="img_fotoSlider/detroit.webp" alt="">
                     </figure>
 
                     <figure class="slide">
-                        <img class="foto" src="https://via.placeholder.com/1440x600" alt="">
+                        <img class="foto" src="img_fotoSlider/terraria.webp" alt="">
                     </figure>
 
                     <figure class="slide">
-                        <img class="foto" src="https://via.placeholder.com/1444x600" alt="">
+                        <img class="foto" src="img_fotoSlider/zelda.webp" alt="">
                     </figure>
                     <!-- slide image einde -->
 
@@ -121,25 +120,24 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
                     <h2 class="kopje_trending_games">Trending Games</h2>
                 </div>
             </header>
-            <div class="inputs_trending_game">
-                <input id="checkbox-sandbox" type="checkbox" class="filter_trending_cards"> 
+            <div class="inputs_filters">
+                <input id="checkbox-sandbox" type="checkbox" class="filter_trending_cards">
                 <label for="checkbox-sandbox">Sandbox</label>
-                <input id="checkbox-co-op" type="checkbox" class="filter_trending_cards"> 
+                <input id="checkbox-co-op" type="checkbox" class="filter_trending_cards">
                 <label for="checkbox-co-op">Co-op</label>
-                <input id="checkbox-role-play" type="checkbox" class="filter_trending_cards"> 
+                <input id="checkbox-role-play" type="checkbox" class="filter_trending_cards">
                 <label for="checkbox-role-play">Role-play</label>
-
             </div>
-            <!-- games -->
+            <!-- trending games -->
             <div class="container_trending_cards">
                 <?php foreach ($trending_games as $row) : ?>
-                    <article class="trending_card" data-category="<?php echo $row["genre"] ?>">
+                    <article class="trending_card" data-category="<?php echo $row["genre"]; ?>">
                         <figure>
-                            <img class="product_card" src="img/<?php echo $row["img_link"] ?>" alt="">
+                            <img class="product_card" src="img/<?php echo $row["img_link"]; ?>" alt="">
                         </figure>
                         <div class="box_text">
                             <h2 class="titel_game"><?php echo $row["titel"]; ?></h2>
-                            <h3 class="genre"><?php echo $row["genre"] ?></h3>
+                            <h3 class="genre"><?php echo $row["genre"]; ?></h3>
                             <span class="price"><?php echo $row["prijzen"]; ?></span>
                             <span class="percentage"><?php echo $row["beoordelingen"]; ?>%</span>
                             <a class="view" href="">weergave</a>
@@ -148,21 +146,30 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
                 <?php endforeach; ?>
             </div>
 
-            <header class="header_trending">
+            <header class="header_game">
                 <div class="header" id="trending">
                     <i class="fa-solid fa-fire-flame-curved"></i>
-                    <h2 class="kopje_trending_games">Games</h2>
+                    <h2 class="kopje_games">Games</h2>
                 </div>
             </header>
-            <div class="container_trending_cards">
+            <div class="inputs_filters">
+                <input id="checkbox-sandbox" type="checkbox" class="filter_game_cards">
+                <label for="checkbox-sandbox">Sandbox</label>
+                <input id="checkbox-co-op" type="checkbox" class="filter_game_cards">
+                <label for="checkbox-co-op">Co-op</label>
+                <input id="checkbox-role-play" type="checkbox" class="filter_game_cards">
+                <label for="checkbox-role-play">Role-play</label>
+            </div>
+            <!-- games -->
+            <div class="container_game_cards">
                 <?php foreach ($games as $row) : ?>
-                    <article class="trending_card">
+                    <article class="game_card">
                         <figure>
-                            <img class="product_card" src="img/<?php echo $row["img_link"] ?>" alt="">
+                            <img class="product_card" src="img/<?php echo $row["img_link"]; ?>" alt="Een afbeelding van een game">
                         </figure>
                         <div class="box_text">
                             <h2 class="titel_game"><?php echo $row["titel"]; ?></h2>
-                            <h3 class="genre"><?php echo $row["genre"] ?></h3>
+                            <h3 class="genre"><?php echo $row["genre"]; ?></h3>
                             <span class="price"><?php echo $row["prijzen"]; ?></span>
                             <span class="percentage"><?php echo $row["beoordelingen"]; ?>%</span>
                             <a class="view" href="">weergave</a>

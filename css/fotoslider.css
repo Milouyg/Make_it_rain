@@ -56,7 +56,7 @@ figure>.foto {
 }
 
 .manual_btn:hover {
-    background: red;
+    background: purple;
 }
 
 #radio1:checked~.first {

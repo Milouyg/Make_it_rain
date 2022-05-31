@@ -1,4 +1,5 @@
-.header_trending {
+.header_trending,
+.header_game {
     width: 100%;
     height: 6rem;
     display: flex;
@@ -23,12 +24,13 @@
     font-size: 3rem;
 }
 
-.kopje_trending_games {
+.kopje_trending_games,
+.kopje_games {
     font-size: 300%;
     padding: 1rem;
 }
 
-.inputs_trending_game {
+.inputs_filters {
     width: 100%;
     height: 5rem;
     display: flex;
@@ -38,7 +40,8 @@
     font-size: 150%;
 }
 
-.filter_trending_cards {
+.filter_trending_cards, 
+.filter_game_cards {
     width: 4rem;
     height: 4rem;
     -webkit-appearance: none;
@@ -67,22 +70,39 @@
     margin: 0 auto;
     padding: 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     background: red;
     position: relative;
-    gap: 1.75rem;
+    gap: 3rem;
     flex-wrap: wrap;
 }
 
-.container_trending_cards .trending_card figure img {
+.container_game_cards{
+    max-width: 144rem;
+    width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: orange;
+    position: relative;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.container_trending_cards .trending_card figure img,
+.container_game_cards .game_card figure img {
     width: 30rem;
     height: 40rem;
     object-fit: cover;
 
 }
 
-.trending_card {
+.trending_card,
+.game_card {
     height: 40%;
     position: relative;
     display: flex;
@@ -106,7 +126,7 @@
     position: absolute;
     width: 100%;
     height: 30%;
-    bottom: 0;
+    bottom: 0.25rem;
     left: 0;
     border-radius: 2rem 2rem 1rem 1rem;
     background: rgba(255, 255, 0, 0.6);
@@ -164,4 +184,8 @@ span {
     background: green;
     text-decoration: none;
     padding: 0.5rem;
+}
+
+@media screen and (max-width: 1000px){
+
 }
