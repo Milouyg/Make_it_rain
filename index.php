@@ -121,12 +121,12 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
                 </div>
             </header>
             <div class="inputs_filters">
-                <input id="checkbox-sandbox" type="checkbox" class="filter_trending_cards">
-                <label for="checkbox-sandbox">Sandbox</label>
-                <input id="checkbox-co-op" type="checkbox" class="filter_trending_cards">
-                <label for="checkbox-co-op">Co-op</label>
-                <input id="checkbox-role-play" type="checkbox" class="filter_trending_cards">
-                <label for="checkbox-role-play">Role-play</label>
+                <input id="checkbox-sandbox-trending" type="checkbox" class="filter_trending_cards">
+                <label for="checkbox-sandbox-trending">Sandbox</label>
+                <input id="checkbox-co-op-trending" type="checkbox" class="filter_trending_cards">
+                <label for="checkbox-co-op-trending">Co-op</label>
+                <input id="checkbox-role-play-trending" type="checkbox" class="filter_trending_cards">
+                <label for="checkbox-role-play-trending">Role-play</label>
             </div>
             <!-- trending games -->
             <div class="container_trending_cards">
@@ -153,17 +153,22 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
                 </div>
             </header>
             <div class="inputs_filters">
-                <input id="checkbox-sandbox" type="checkbox" class="filter_game_cards">
-                <label for="checkbox-sandbox">Sandbox</label>
-                <input id="checkbox-co-op" type="checkbox" class="filter_game_cards">
-                <label for="checkbox-co-op">Co-op</label>
-                <input id="checkbox-role-play" type="checkbox" class="filter_game_cards">
-                <label for="checkbox-role-play">Role-play</label>
+                <input id="checkbox-sandbox-game" type="checkbox" class="filter_game_cards">
+                <label for="checkbox-sandbox-game">Sandbox</label>
+                <input id="checkbox-coöp-game" type="checkbox" class="filter_game_cards">
+                <label for="checkbox-coöp-game">Co-op</label>
+                <input id="checkbox-role-play-game" type="checkbox" class="filter_game_cards">
+                <label for="checkbox-role-play-game">Role-play</label>
+                <input id="checkbox-shooter-game" type="checkbox" class="filter_game_cards">
+                <label for="checkbox-shooter-game">Shooter</label>
+                <input id="checkbox-sport-game" type="checkbox" class="filter_game_cards">
+                <label for="checkbox-sport-game">Sport</label>
+                
             </div>
             <!-- games -->
             <div class="container_game_cards">
                 <?php foreach ($games as $row) : ?>
-                    <article class="game_card">
+                    <article class="game_card" data-category="<?php echo $row["genre"]; ?>">
                         <figure>
                             <img class="product_card" src="img/<?php echo $row["img_link"]; ?>" alt="Een afbeelding van een game">
                         </figure>

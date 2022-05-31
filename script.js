@@ -23,7 +23,7 @@ function show() {
 let allTrendingGames = document.getElementsByClassName("trending_card");
 // let filters = document.getElementsByClassName("filter_trending_cards");
 
-let sandbox_filter = document.getElementById("checkbox-sandbox");
+let sandbox_filter = document.getElementById("checkbox-sandbox-trending");
 sandbox_filter.onchange = function () {
     if (sandbox_filter.checked === true) {
         for (let i = 0; i < allTrendingGames.length; i++) {
@@ -40,7 +40,7 @@ sandbox_filter.onchange = function () {
     }
 }
 
-let coöp_filter = document.getElementById("checkbox-co-op");
+let coöp_filter = document.getElementById("checkbox-co-op-trending");
 coöp_filter.onchange = function () {
     if (coöp_filter.checked === true) {
         for (let i = 0; i < allTrendingGames.length; i++) {
@@ -58,9 +58,9 @@ coöp_filter.onchange = function () {
     }
 }
 
-let role_play = document.getElementById("checkbox-role-play");
-role_play.onchange = function () {
-    if (role_play.checked === true) {
+let role_play_filter = document.getElementById("checkbox-role-play-trending");
+role_play_filter.onchange = function () {
+    if (role_play_filter.checked === true) {
         for (let i = 0; i < allTrendingGames.length; i++) {
             if (allTrendingGames[i].dataset.category === "role-play")
                 allTrendingGames[i].style.display = "block";
@@ -77,8 +77,9 @@ role_play.onchange = function () {
 
 
 // Game Filters
-let allGames = document.getElementsByClassName("");
-let sandbox = document.getElementById("");
+let allGames = document.getElementsByClassName("game_card");
+
+let sandbox = document.getElementById("checkbox-sandbox-game");
 sandbox.onchange = function () {
     if (sandbox.checked === true) {
         for (let i = 0; i < allGames.length; i++) {
@@ -90,6 +91,79 @@ sandbox.onchange = function () {
     else {
         for (let i = 0; i < allGames.length; i++) {
             if (allGames[i].dataset.category === "sandbox") {
+                allGames[i].style.display = "none";
+            }
+        }
+    }
+}
+
+let coop = document.getElementById("checkbox-coöp-game");
+coop.onchange = function () {
+    if (coop.checked === true) {
+        for (let i = 0; i < allGames.length; i++) {
+            if (allGames[i].dataset.category === "co-op") {
+                allGames[i].style.display = "block";
+            }
+        }
+    }
+    else {
+        for (let i = 0; i < allGames.length; i++) {
+            if (allGames[i].dataset.category === "co-op") {
+                allGames[i].style.display = "none";
+            }
+        }
+    }
+}
+
+let rolePlay = document.getElementById("checkbox-role-play-game");
+rolePlay.onchange = function () {
+    if (rolePlay.checked === true) {
+        for (let i = 0; i < allGames.length; i++) {
+            if (allGames[i].dataset.category === "role-play") {
+                allGames[i].style.display = "block";
+            }
+        }
+    }
+    else {
+        for (let i = 0; i < allGames.length; i++) {
+            if (allGames[i].dataset.category === "role-play") {
+                allGames[i].style.display = "none";
+            }
+        }
+    }
+}
+
+let shooter = document.getElementById("checkbox-shooter-game");
+shooter.onchange = function () {
+    if (shooter.checked === true) {
+        for (let i = 0; i < allGames.length; i++){
+            if (allGames[i].dataset.category === "shooter") {
+                allGames[i].style.display = "block";
+            }
+            
+        }
+    }
+    else {
+        for (let i = 0; i < allGames.length; i++) {
+            if (allGames[i].dataset.category === "shooter") {
+                allGames[i].style.display = "none";
+            }
+        }
+    }
+}
+
+let sport = document.getElementById("checkbox-sport-game")
+sport.onchange = function () {
+    if (sport.checked === true) {
+        for (let i = 0; i < allGames.length; i++){
+            if (allGames[i].dataset.category === "sport") {
+                allGames[i].style.display = "block";
+            }
+        }
+    }
+    else {
+        for (let i = 0; i < allGames.length; i++){
+            if (allGames[i].dataset.category === "sport") {
                 allGames[i].style.display = "none";
             }
         }
