@@ -131,15 +131,15 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
             <!-- trending games -->
             <div class="container_trending_cards">
                 <?php foreach ($trending_games as $row) : ?>
-                    <article class="trending_card" data-category="<?php echo $row["genre"]; ?>">
+                    <article class="trending_card" data-category="<?php echo $row["genre"];?>">
                         <figure>
-                            <img class="product_card" src="img/<?php echo $row["img_link"]; ?>" alt="">
+                            <img class="product_card" src="img/<?php echo $row["img_link"];?>" alt="">
                         </figure>
                         <div class="box_text">
                             <h2 class="titel_game"><?php echo $row["titel"]; ?></h2>
                             <h3 class="genre"><?php echo $row["genre"]; ?></h3>
                             <span class="price"><?php echo $row["prijzen"]; ?></span>
-                            <span class="percentage"><?php echo $row["beoordelingen"]; ?>%</span>
+                            <span class="percentage"><?php echo $row["beoordelingen"];?>%</span>
                             <a class="view" href="game_view.php?id=<?php echo $row["id"];?>">weergave</a>
                         </div>
                     </article>

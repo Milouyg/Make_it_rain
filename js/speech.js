@@ -14,14 +14,12 @@ startRecognition = () => {
         recognition.continuous = false; // https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition/continuous
 
         recognition.onstart = () => {
-            message.innerHTML = `Ik luister, praat in de microfoon alsjeblieft<br>Zeg"help me" voor help`;
-            console.log("luisteren");
+            message.innerHTML = "Zeg download";
             textWaiting.classList.add("hide"); // hide the output
         };
 
         recognition.onspeechend = () => {
-            message.innerHTML = `Ik ben gestop met luisteren `;
-            console.log("stop luisteren");
+            message.innerHTML = "Luisteren gestopt";
             recognition.stop();
         };
 
@@ -48,18 +46,7 @@ actionSpeech = (speechText) => {
         // switch evaluates using stric comparison, ===
         case "download":
             downloads.classList.remove("hide");
-            break;
-        case "reset":
-
-            break;
-        case "windows":
-            document.body.style.display = "block";
-            break;
-        case "android": // let op, "fall-through"
-            document.body.style.display = "block";
-            break;
-        case "help me":
-            alert("Zeg welke browser download je nodig hebt. De opties zijn, ios, windows en android");
+            message.innerHTML = "";
             break;
         default:
         // do nothing yet

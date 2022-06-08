@@ -48,10 +48,10 @@ $game_detail = $statement->fetch(PDO::FETCH_ASSOC);
             </article>
         </section>
         <section class="bottom">
-            <h3 id="message">
+            <h3 class="speech_text" id="message">
                 Klik op de knop en zeg "download" voor de opties.
             </h3>
-            <button onclick="startRecognition()">Download</button>
+            <button class="speech_button" onclick="startRecognition()">Download</button>
             <p id="waiting" class="hide"></p>
             <div class="downloads hide" id="downloads_link">
                 <a class="button" href="">IOS</a>
