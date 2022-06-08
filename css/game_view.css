@@ -36,15 +36,15 @@ html {
 }
 
 main>section>article>h2 {
-    font-size: 350%;
+    font-size: 300%;
     display: flex;
     justify-content: center;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
 }
 
 main>section>article>p {
     font-size: 175%;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .trailer {
@@ -64,6 +64,10 @@ video {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
+}
+
+.hide{
+    display: none;
 }
 
 .downloads {

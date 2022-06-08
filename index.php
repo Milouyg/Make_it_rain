@@ -19,7 +19,7 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/log_in.css">
     <script src="https://kit.fontawesome.com/b1a8b29774.js" crossorigin="anonymous"></script>
-    <script src="script.js" defer></script>
+    <script src="js/main.js" defer></script>
     <title>Notice Games</title>
 </head>
 

@@ -31,6 +31,7 @@ $game_detail = $statement->fetch(PDO::FETCH_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/game_view.css">
+    <script src="js/speech.js" defer></script>
 </head>
 
 <body>
@@ -47,7 +48,12 @@ $game_detail = $statement->fetch(PDO::FETCH_ASSOC);
             </article>
         </section>
         <section class="bottom">
-            <div class="downloads">
+            <h3 id="message">
+                Klik op de knop en zeg "download" voor de opties.
+            </h3>
+            <button onclick="startRecognition()">Download</button>
+            <p id="waiting" class="hide"></p>
+            <div class="downloads hide" id="downloads_link">
                 <a class="button" href="">IOS</a>
                 <a class="button" href="">Windows</a>
                 <a class="button" href="">Android</a>

@@ -78,7 +78,6 @@ role_play_filter.onchange = function () {
 
 // Game Filters
 let allGames = document.getElementsByClassName("game_card");
-
 let sandbox = document.getElementById("checkbox-sandbox-game");
 sandbox.onchange = function () {
     if (sandbox.checked === true) {
@@ -136,11 +135,11 @@ rolePlay.onchange = function () {
 let shooter = document.getElementById("checkbox-shooter-game");
 shooter.onchange = function () {
     if (shooter.checked === true) {
-        for (let i = 0; i < allGames.length; i++){
+        for (let i = 0; i < allGames.length; i++) {
             if (allGames[i].dataset.category === "shooter") {
                 allGames[i].style.display = "block";
             }
-            
+
         }
     }
     else {
@@ -155,17 +154,18 @@ shooter.onchange = function () {
 let sport = document.getElementById("checkbox-sport-game")
 sport.onchange = function () {
     if (sport.checked === true) {
-        for (let i = 0; i < allGames.length; i++){
+        for (let i = 0; i < allGames.length; i++) {
             if (allGames[i].dataset.category === "sport") {
                 allGames[i].style.display = "block";
             }
         }
     }
     else {
-        for (let i = 0; i < allGames.length; i++){
+        for (let i = 0; i < allGames.length; i++) {
             if (allGames[i].dataset.category === "sport") {
                 allGames[i].style.display = "none";
             }
         }
     }
 }
+
