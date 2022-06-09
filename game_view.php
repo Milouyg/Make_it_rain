@@ -51,7 +51,7 @@ $game_detail = $statement->fetch(PDO::FETCH_ASSOC);
             <h3 class="speech_text" id="message">
                 Klik op de knop en zeg "download" voor de opties.
             </h3>
-            <button class="speech_button" onclick="startRecognition()">Download</button>
+            <button class="speech_button" id="speech_button" onclick="startRecognition()">Download</button>
             <p id="waiting" class="hide"></p>
             <div class="downloads hide" id="downloads_link">
                 <a class="button" href="">IOS</a>
@@ -66,7 +66,45 @@ $game_detail = $statement->fetch(PDO::FETCH_ASSOC);
                     <img class="game_img" src="img_game_view/<?php echo $game_detail["img2"] ?>" alt="afbeelding van de game">
                 </figure>
             </div>
-
+            <!-- reviews --> 
+        <section class="section_reviews">
+            <ul class="reviews">
+                <li class="review_list">
+                    <span>Naam</span>
+                    <div class="stars">
+                    &#9733;
+                    &#9733;
+                    &#9733;
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ad reprehenderit id impedit accusamus porro aspernatur est cum esse facilis molestias distinctio minus iste similique odit maxime asperiores rerum itaque!
+                    </p>
+                </li>
+                <li class="review_list">
+                <span>Naam</span>
+                <div class="stars">
+                    &#9733;
+                    &#9733;
+                    &#9733;
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ad reprehenderit id impedit accusamus porro aspernatur est cum esse facilis molestias distinctio minus iste similique odit maxime asperiores rerum itaque!
+                    </p>
+                </li>
+                <li class="review_list">
+                <span>Naam</span>
+                <div class="stars">
+                    &#9733;
+                    &#9733;
+                    &#9733;
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ad reprehenderit id impedit accusamus porro aspernatur est cum esse facilis molestias distinctio minus iste similique odit maxime asperiores rerum itaque!
+                    </p>
+                </li>
+            </ul>
+        </section>
+        
 
         </section>
     </main>

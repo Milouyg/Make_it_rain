@@ -131,16 +131,16 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
             <!-- trending games -->
             <div class="container_trending_cards">
                 <?php foreach ($trending_games as $row) : ?>
-                    <article class="trending_card" data-category="<?php echo $row["genre"];?>">
+                    <article class="trending_card" data-category="<?php echo $row["genre"]; ?>">
                         <figure>
-                            <img class="product_card" src="img/<?php echo $row["img_link"];?>" alt="">
+                            <img class="product_card" src="img/<?php echo $row["img_link"]; ?>" alt="">
                         </figure>
                         <div class="box_text">
                             <h2 class="titel_game"><?php echo $row["titel"]; ?></h2>
                             <h3 class="genre"><?php echo $row["genre"]; ?></h3>
                             <span class="price"><?php echo $row["prijzen"]; ?></span>
-                            <span class="percentage"><?php echo $row["beoordelingen"];?>%</span>
-                            <a class="view" href="game_view.php?id=<?php echo $row["id"];?>">weergave</a>
+                            <span class="percentage"><?php echo $row["beoordelingen"]; ?>%</span>
+                            <a class="view" href="game_view.php?id=<?php echo $row["id"]; ?>">weergave</a>
                         </div>
                     </article>
                 <?php endforeach; ?>
@@ -163,7 +163,7 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
                 <label for="checkbox-shooter-game">Shooter</label>
                 <input id="checkbox-sport-game" type="checkbox" class="filter_game_cards">
                 <label for="checkbox-sport-game">Sport</label>
-                
+
             </div>
             <!-- games -->
             <div class="container_game_cards">
@@ -177,7 +177,7 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
                             <h3 class="genre"><?php echo $row["genre"]; ?></h3>
                             <span class="price"><?php echo $row["prijzen"]; ?></span>
                             <span class="percentage"><?php echo $row["beoordelingen"]; ?>%</span>
-                            <a class="view" href="">weergave</a>
+                            <a class="view" href="game_view.php?id=<?php echo $row["id"]; ?>">weergave</a>
                         </div>
                     </article>
                 <?php endforeach; ?>

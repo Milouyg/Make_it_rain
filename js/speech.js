@@ -5,6 +5,8 @@ const message = document.getElementById("message");
 const textWaiting = document.getElementById("waiting");
 const image1 = document.getElementById("image1");
 const downloads = document.getElementById("downloads_link");
+const speech_recognition_button = document.getElementById("speech_button");
+
 
 startRecognition = () => {
     if (SpeechRecognition !== undefined) { // test if speechrecognitio is supported
@@ -16,6 +18,7 @@ startRecognition = () => {
         recognition.onstart = () => {
             message.innerHTML = "Zeg download";
             textWaiting.classList.add("hide"); // hide the output
+            speech_recognition_button.style.display = "none";
         };
 
         recognition.onspeechend = () => {
@@ -52,3 +55,9 @@ actionSpeech = (speechText) => {
         // do nothing yet
     }
 }
+
+// reviews
+let arrowButtons = document.getElementsByClassName("arrow");
+let reviews = document.getElementsByClassName("review");
+let modus = "one-two-three";
+
