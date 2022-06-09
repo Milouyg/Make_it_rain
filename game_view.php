@@ -39,6 +39,7 @@ $game_detail = $statement->fetch(PDO::FETCH_ASSOC);
         <section class="top">
             <article class="game_info">
                 <h2><?php echo $game_detail["titel"] ?></h2>
+                <span class="prijs"><?php echo $game_detail["prijzen"] ?></span>
                 <p>
                     <?php echo $game_detail["beschrijving"] ?>
                 </p>

@@ -44,6 +44,11 @@ main>section>article>h2 {
     padding-top: 0.5rem;
 }
 
+main>section>article>span{
+    font-size: 200%;
+    margin: 0 auto;
+}
+
 main>section>article>p {
     font-size: 175%;
     padding: 0.5rem;
@@ -125,19 +130,19 @@ video {
 }
 
 .section_reviews {
-    grid-column: 4/6;
+    grid-column: 3/5;
     grid-row: 6/9;
 }
 
 .reviews{
     display: flex;
-    gap: 2rem;
+    gap: 6rem;
 }
 
 .review_list{
     list-style: none;
     background: purple;
-    min-width: 100%;
+    min-width: 125%;
     height: auto;
     padding: 1.5rem;
     border-radius: 2rem;
@@ -244,9 +249,16 @@ video {
         gap: 1rem;
     }
 
-    .section_reviews{
-        grid-column: 2/5;
+    .reviews{
+        grid-column: 1/4;
         grid-row: 5/9;
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    .review_list{
+
+        min-width: 100%;
     }
 }
 
@@ -305,7 +317,6 @@ video {
 
     .reviews{
         flex-wrap: wrap;
-        margin-left: 2rem;
-        margin-right: 2rem;
+
     }
 }
