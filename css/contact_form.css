@@ -1,0 +1,92 @@
+.contact_form {
+    max-width: 144rem;
+    width: 100%;
+    height: 60vh;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background: red;
+}
+
+.contact_content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+.contact_form>.contact_content>ul {
+    list-style: none;
+}
+
+.left_side {
+    width: 25rem;
+    background: yellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.contact_form>.contact_content .left_side::before {
+    content: "";
+    position: absolute;
+    right: 0.2rem;
+    height: 70%;
+    width: 0.3rem;
+    background: #afafb6;
+}
+
+.contact_form>.contact_content>.left_side>li {
+    font-size: 150%;
+    margin-top: 1rem;
+}
+
+.contact_input {
+    width: 80%;
+    height: 60%;
+}
+
+.contact_textarea {
+    width: 80%;
+    height: 100%;
+}
+
+.fa-solid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: purple;
+}
+
+.contact_text {
+    font-size: 200%;
+}
+
+.right_side {
+    width: 55rem;
+    height: 30rem;
+    background: green;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-left: 2rem;
+}
+
+.contact_form>.contact_content>.right_side>li {
+    margin-top: 1.5rem;
+}
+
+.send {
+    width: 15rem;
+    height: 3rem;
+    font-size: 150%;
+    outline: none;
+    margin-top: 3rem;
+}

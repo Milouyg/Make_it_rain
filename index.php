@@ -18,6 +18,7 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
     <link rel="stylesheet" href="css/fotoslider.css">
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/log_in.css">
+    <link rel="stylesheet" href="css/contact_form.css">
     <script src="https://kit.fontawesome.com/b1a8b29774.js" crossorigin="anonymous"></script>
     <script src="js/main.js" defer></script>
     <title>Notice Games</title>
@@ -27,8 +28,8 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
     <!-- Navigatie -->
     <header class="header_navigatie">
         <div class="container">
-            <label class="mobile_menu" for="icon">
-                <i for="icon" class="fa fa-bars"></i>
+            <label class="mobile_menu">
+                <i class="fa fa-bars"></i>
             </label>
             <figure class="logo">
                 <img class="google" src="img/logo.png" alt="">
@@ -50,13 +51,13 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
                 <div class="text">Login Form</div>
                 <form action="#">
                     <div class="data">
-                        <label for="#">Email or Telefoon</label>
+                        <label for="email">Email or Telefoon</label>
                         <input type="text" required>
                     </div>
                     <div class="data">
-                        <label for="#">Wachtwoord</label>
+                        <label for="password">Wachtwoord</label>
                         <input type="password" required>
-                        <div class="forgot_password"><a href="#">Wachtwoord vergeten</a></div>
+                        <div class="forgot_password"><a href="">Wachtwoord vergeten</a></div>
                     </div>
                     <button class="form_log_in" type="submit">Inloggen</button>
                     <div class="sign_up">Nog geen lid? <a class="make_acc" href=""> Maak hier een account</a></div>
@@ -182,10 +183,47 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
                     </article>
                 <?php endforeach; ?>
             </div>
-
+                <!-- contact form -->
+                <header class="header_contact">
+                <div class="header" id="trending">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                    <h2 class="kopje_contact">Contact formulier</h2>
+                </div>
+            </header>
+            <section class="contact_form">
+            <div class="contact_content">
+                <ul class="left_side">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Amsterdam</p>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <p>ma-web@gmail.com</p>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <p>+06879254</p>
+                    </li>
+                </ul>
+                <ul class="right_side">
+                    <li>
+                        <p class="contact_text">naam</p>
+                        <input class="contact_input" type="naam" placeholder="naam">
+                    </li>
+                    <li>
+                        <p class="contact_text">email</p>
+                        <input class="contact_input" type="email" placeholder="email">
+                    </li>
+                    <li>
+                        <p class="contact_text">bericht</p>
+                        <textarea class="contact_textarea" placeholder="bericht" rows="4" cols="50"></textarea>
+                    </li>
+                    <input class="send" type="submit" value="submit">
+                </ul>
+            </div>
+    
         </section>
-        <!-- game section -->
-        <section>
 
         </section>
     </main>
