@@ -4,6 +4,13 @@ $connection = dbConnect();
 
 $trending_games = $connection->query("SELECT * FROM `games` WHERE beoordelingen > 93");
 $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
+
+// Checken of er gegevens zijn opgestuurd
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Gegevens tonen
+    print_r($_POST);
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +41,7 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
             <figure class="logo">
                 <img class="google" src="img/logo.png" alt="">
             </figure>
-            <form class="search_box" for="#">
+            <form class="search_box">
                 <input type="text" placeholder="games">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
@@ -49,10 +56,10 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
             <div class="container_logIn" id="container_logIn">
                 <label for="show" class="close_btn fas fa-times"></label>
                 <div class="text">Login Form</div>
-                <form action="#">
+                <form>
                     <div class="data">
-                        <label for="email">Email or Telefoon</label>
-                        <input type="text" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
                     </div>
                     <div class="data">
                         <label for="password">Wachtwoord</label>
@@ -183,46 +190,53 @@ $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
                     </article>
                 <?php endforeach; ?>
             </div>
-                <!-- contact form -->
-                <header class="header_contact">
+            <!-- contact form -->
+            <header class="header_contact">
                 <div class="header" id="trending">
                     <i class="fa-solid fa-fire-flame-curved"></i>
                     <h2 class="kopje_contact">Contact formulier</h2>
                 </div>
             </header>
             <section class="contact_form">
-            <div class="contact_content">
+            <form action="index.php" method="POST" class="contact_content">
                 <ul class="left_side">
                     <li>
                         <i class="fa-solid fa-location-dot"></i>
-                        <p>Amsterdam</p>
+                        <p class="contact_p">Amsterdam</p>
                     </li>
                     <li>
                         <i class="fa-solid fa-envelope"></i>
-                        <p>ma-web@gmail.com</p>
+                        <p class="contact_p">ma-web@gmail.com</p>
                     </li>
                     <li>
                         <i class="fa-solid fa-phone"></i>
-                        <p>+06879254</p>
+                        <p class="contact_p">+06879254</p>
                     </li>
                 </ul>
                 <ul class="right_side">
-                    <li>
-                        <p class="contact_text">naam</p>
-                        <input class="contact_input" type="naam" placeholder="naam">
+                    <li class="field">
+                        <label class="contact_text" for="firstname">Voornaam</label>
+                        <input class="contact_input" id="firstname" name="firstname" type="text" placeholder="voornaam"
+                            required>
                     </li>
-                    <li>
-                        <p class="contact_text">email</p>
-                        <input class="contact_input" type="email" placeholder="email">
+                    <li class="field">
+                        <label class="contact_text" for="lastname">Achternaam</label>
+                        <input class="contact_input" id="lastname" name="lastname" type="text" placeholder="achternaam"
+                            required>
                     </li>
-                    <li>
-                        <p class="contact_text">bericht</p>
-                        <textarea class="contact_textarea" placeholder="bericht" rows="4" cols="50"></textarea>
+                    <li class="field">
+                        <label class="contact_text" for="email">Email</label>
+                        <input class="contact_input" id="email" name="email" type="email" placeholder="email" required>
                     </li>
-                    <input class="send" type="submit" value="submit">
+                    <li class="field">
+                        <label class="contact_text" for="message">Bericht</label>
+                        <textarea class="contact_textarea" id="message" name="message" placeholder="bericht" rows="4"
+                            cols="50" required></textarea>
+                    </li>
+                    <button class="send" type="submit" value="submit">Opsturen</button>
                 </ul>
-            </div>
-    
+            </form>
+
         </section>
 
         </section>
