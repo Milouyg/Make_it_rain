@@ -17,7 +17,7 @@ html {
 
 .top {
     width: 100%;
-    background: green;
+    background: rgb(182, 112, 243);
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
@@ -29,12 +29,13 @@ html {
     background: #eee;
     box-shadow: 0 2rem 5rem 0 rgba(0, 0, 0, 0.2);
     border-radius: 2rem;
-    grid-column: 2/5;
+    grid-column: 1/6;
     grid-row: 3/11;
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
+    padding: 1rem 2rem;
 }
 
 main>section>article>h2 {
@@ -44,7 +45,7 @@ main>section>article>h2 {
     padding-top: 0.5rem;
 }
 
-main>section>article>span{
+main>section>article>span {
     font-size: 200%;
     margin: 0 auto;
 }
@@ -68,11 +69,12 @@ video {
 
 .bottom {
     height: 75%;
-    background: red;
+    background: rgb(182, 112, 243);
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(8, 1fr);
 }
+
 .speech_text {
     grid-column: 2/5;
     grid-row: 2/3;
@@ -87,7 +89,14 @@ video {
     grid-column: 2/5;
     grid-row: 3/4;
     border: none;
+    background: rgb(223, 193, 249);
     border-radius: 2rem;
+    font-size: 250%;
+}
+
+.speech_button:hover {
+    background: rgb(120, 40, 190);
+    color: white;
 }
 
 .hide {
@@ -97,14 +106,13 @@ video {
 .downloads {
     grid-column: 2/5;
     grid-row: 4/10;
-    background: purple;
 }
 
 .button {
     font-size: 200%;
     text-decoration: none;
-    color: white;
-    background-color: blue;
+    color: black;
+    background-color: rgb(223, 193, 249);
     border-radius: 1.5rem;
     display: flex;
     justify-content: center;
@@ -114,8 +122,12 @@ video {
     margin-top: 2rem;
 }
 
+.button:hover {
+    background: rgb(120, 40, 190);
+    color: white;
+}
+
 .container_img {
-    background: yellow;
     grid-column: 6/12;
     grid-row: 1/6;
     display: flex;
@@ -130,26 +142,28 @@ video {
 }
 
 .section_reviews {
-    grid-column: 3/5;
+    grid-column: 2/4;
     grid-row: 6/9;
 }
 
-.reviews{
+.reviews {
     display: flex;
     gap: 6rem;
+    height: 90%;
 }
 
-.review_list{
+.review_list {
     list-style: none;
-    background: purple;
-    min-width: 125%;
+    background: white;
+    min-width: 155%;
     height: auto;
     padding: 1.5rem;
     border-radius: 2rem;
     flex-grow: 1;
+    font-size: 130%;
 }
 
-.stars{
+.stars {
     color: gold;
 }
 
@@ -219,16 +233,19 @@ video {
         padding: 0.5rem;
     }
 
-    .reviews{
+    .reviews {
         grid-column: 2/5;
         grid-row: 6/9;
     }
+
+    .review_list {
+        font-size: 125%;
+    }
 }
 
-@media screen and (max-width: 53.125rem)
+@media screen and (max-width: 53.125rem) {
 
-/* 850 px */
-    {
+    /* 850 px */
     .game_info {
         grid-row: 2/12;
         grid-column: span 12;
@@ -240,7 +257,6 @@ video {
     }
 
     .container_img {
-        background: yellow;
         grid-column: 6/12;
         grid-row: 1/4;
         display: flex;
@@ -254,19 +270,24 @@ video {
         grid-row: 5/9;
     }
 
-    .reviews{
+    .reviews {
         grid-column: 1/4;
         grid-row: 5/9;
         display: flex;
         gap: 2.5rem;
     }
 
-    .review_list{
+    .review_list {
 
         min-width: 100%;
     }
 }
 
+@media screen and (max-width: 43.75rem) {
+    .reviews {
+        width: 110%;
+    }
+}
 
 @media screen and (max-width: 37.5rem)
 
@@ -289,8 +310,7 @@ video {
     }
 
     .bottom {
-        height: 40%;
-        background: red;
+        height: 175%;
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -309,7 +329,6 @@ video {
     }
 
     .container_img {
-        background: yellow;
         grid-column: 6/12;
         grid-row: 3/12;
         display: flex;
@@ -320,7 +339,7 @@ video {
         flex-grow: 1;
     }
 
-    .reviews{
+    .reviews {
         flex-wrap: wrap;
 
     }

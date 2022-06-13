@@ -15,7 +15,7 @@ html {
 
 /* header */
 .header_navigatie {
-    background: #7256c0;
+    background: rgb(152,50,255);
     width: 100%;
     height: 6rem;
     display: flex;
@@ -36,6 +36,13 @@ html {
 
 .mobile_menu {
     display: none;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 200%;
 }
 
 figure.logo,
@@ -60,29 +67,30 @@ menu li a {
     display: inline-block;
     text-align: center;
     width: 12rem;
-    color: white;
-    background: green;
+    color: black;
+    background: rgb(182,112,243);
     padding: 0.75rem 1rem;
-    border: 0.25rem solid black;
+    border: 0.25rem solid rgb(75,25,119);
     border-radius: 1.5rem;
 }
 
 menu li a:hover {
-    color: black;
+    background: #5f0bb39b;
+    color: white;
 }
 
 .log_in{
-    color: white;
+    color: black;
     font-size: 2rem;
     text-align: center;
-    border: 0.25rem solid black;
-    background-color: #4CAF50;
+    border: 0.25rem solid rgb(75,25,119);
+    background-color: rgb(182,112,243);
     padding: 0.75rem 1.5rem;
     border-radius: 1.5rem;
 }
 
 .log_in:hover {
-    color: black;
+    color: white;
 }
 
 .search_box {
@@ -90,21 +98,24 @@ menu li a:hover {
     height: 4rem;
     width: 60rem;
     top: 1rem;
+    z-index: 1;
 }
 
 .search_box input {
     width: 100%;
     height: 100%;
-    border-radius: 2rem;
+    border-radius: 1rem;
     padding: 0 2rem;
+    border: none;
 }
 
 .search_box button {
     width: 6rem;
     height: 100%;
-    border-radius: 2rem;
+    border-radius: 1rem;
     position: absolute;
     right: 0;
+    border: 0.3rem solid black;
 }
 
 
@@ -147,9 +158,7 @@ menu li a:hover {
         text-align: center;
         width: 11rem;
         color: white;
-        background: green;
         padding: 0.75rem 1.5rem;
-        border: 0.25rem solid black;
     }
 
     .search_box {
@@ -161,14 +170,13 @@ menu li a:hover {
     .search_box input {
         width: 100%;
         height: 100%;
-        border-radius: 2rem;
+        border-radius: 1rem;
         padding: 0 2rem;
     }
 
     .search_box button {
         width: 6rem;
         height: 100%;
-        border-radius: 2rem;
         position: absolute;
         right: 0;
     }
@@ -237,8 +245,6 @@ menu li a:hover {
         color: white;
         font-size: 2rem;
         text-align: center;
-        border: 0.25rem solid black;
-        background-color: #4CAF50;
         padding: 0.75rem 1.5rem;
         border-radius: 1.5rem;
         margin: 0;

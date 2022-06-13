@@ -39,7 +39,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <i class="fa fa-bars"></i>
             </label>
             <figure class="logo">
-                <img class="google" src="img/logo.png" alt="">
+                <h2 class="logo">Xlr8</h2>
+                <!-- <img class="google" src="img/logo.png" alt=""> -->
             </figure>
             <form class="search_box">
                 <input type="text" placeholder="games">
@@ -124,11 +125,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <section>
             <header class="header_trending">
                 <div class="header" id="trending">
-                    <i class="fa-solid fa-fire-flame-curved"></i>
+                    <i class="fa-solid fa-fire-flame-curved" id="flame_trending"></i>
                     <h2 class="kopje_trending_games">Trending Games</h2>
                 </div>
             </header>
-            <div class="inputs_filters">
+            <div class="inputs_filters_trending">
                 <input id="checkbox-sandbox-trending" type="checkbox" class="filter_trending_cards">
                 <label for="checkbox-sandbox-trending">Sandbox</label>
                 <input id="checkbox-co-op-trending" type="checkbox" class="filter_trending_cards">
@@ -143,7 +144,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <figure>
                             <img class="product_card" src="img/<?php echo $row["img_link"]; ?>" alt="">
                         </figure>
-                        <div class="box_text">
+                        <div class="box_text_trending">
                             <h2 class="titel_game"><?php echo $row["titel"]; ?></h2>
                             <h3 class="genre"><?php echo $row["genre"]; ?></h3>
                             <span class="price"><?php echo $row["prijzen"]; ?></span>
@@ -156,11 +157,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <header class="header_game">
                 <div class="header" id="trending">
-                    <i class="fa-solid fa-fire-flame-curved"></i>
+                    <i class="fa-solid fa-fire-flame-curved" id="flame_game"></i>
                     <h2 class="kopje_games">Games</h2>
                 </div>
             </header>
-            <div class="inputs_filters">
+            <div class="inputs_filters_games">
                 <input id="checkbox-sandbox-game" type="checkbox" class="filter_game_cards">
                 <label for="checkbox-sandbox-game">Sandbox</label>
                 <input id="checkbox-coöp-game" type="checkbox" class="filter_game_cards">
@@ -180,7 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <figure>
                             <img class="product_card" src="img/<?php echo $row["img_link"]; ?>" alt="Een afbeelding van een game">
                         </figure>
-                        <div class="box_text">
+                        <div class="box_text_game">
                             <h2 class="titel_game"><?php echo $row["titel"]; ?></h2>
                             <h3 class="genre"><?php echo $row["genre"]; ?></h3>
                             <span class="price"><?php echo $row["prijzen"]; ?></span>
@@ -193,7 +194,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- contact form -->
             <header class="header_contact">
                 <div class="header" id="trending">
-                    <i class="fa-solid fa-fire-flame-curved"></i>
                     <h2 class="kopje_contact">Contact formulier</h2>
                 </div>
             </header>
@@ -215,22 +215,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </ul>
                 <ul class="right_side">
                     <li class="field">
-                        <label class="contact_text" for="firstname">Voornaam</label>
-                        <input class="contact_input" id="firstname" name="firstname" type="text" placeholder="voornaam"
+                        <input class="contact_input" id="voornaam" name="voornaam" type="text" placeholder="voornaam"
                             required>
                     </li>
                     <li class="field">
-                        <label class="contact_text" for="lastname">Achternaam</label>
-                        <input class="contact_input" id="lastname" name="lastname" type="text" placeholder="achternaam"
+                        <input class="contact_input" id="achternaam" name="achternaam" type="text" placeholder="achternaam"
                             required>
                     </li>
                     <li class="field">
-                        <label class="contact_text" for="email">Email</label>
                         <input class="contact_input" id="email" name="email" type="email" placeholder="email" required>
                     </li>
                     <li class="field">
-                        <label class="contact_text" for="message">Bericht</label>
-                        <textarea class="contact_textarea" id="message" name="message" placeholder="bericht" rows="4"
+                        <textarea class="contact_textarea" id="bericht" name="bericht" placeholder="bericht" rows="4"
                             cols="50" required></textarea>
                     </li>
                     <button class="send" type="submit" value="submit">Opsturen</button>

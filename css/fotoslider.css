@@ -1,4 +1,8 @@
 /* fotoslider */
+main{
+    background: rgb(165,76,255);
+}
+
 .fotoslider {
     padding: 0;
     display: flex;
@@ -44,7 +48,7 @@ figure>.foto {
 }
 
 .manual_btn {
-    border: 0.5rem solid #7256c0;
+    border: 0.5rem solid rgb(75,25,119);
     padding: 2%;
     border-radius: 50%;
     cursor: pointer;
@@ -56,7 +60,7 @@ figure>.foto {
 }
 
 .manual_btn:hover {
-    background: purple;
+    background: rgb(192,132,244);
 }
 
 #radio1:checked~.first {
