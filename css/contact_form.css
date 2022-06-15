@@ -308,7 +308,7 @@
     }
     
     .send{
-        margin-top: 0rem;
+        margin-top: 1rem;
         font-size: 200%;
     }
 }
@@ -345,6 +345,6 @@
     }
 
     .right_side{
-        height: 40rem;
+        height: 42rem;
     }
 }

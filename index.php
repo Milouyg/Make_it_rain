@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/log_in.css">
     <link rel="stylesheet" href="css/contact_form.css">
+    <link rel="stylesheet" href="css/footer.css">
     <script src="https://kit.fontawesome.com/b1a8b29774.js" crossorigin="anonymous"></script>
     <script src="js/main.js" defer></script>
     <title>Notice Games</title>
@@ -36,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <header class="header_navigatie">
         <div class="container">
             <label class="mobile_menu">
-                <i class="fa fa-bars"></i>
+                <i class="fa fa-bars hamburger"></i>
             </label>
             <figure class="logo">
                 <h2 class="logo">Xlr8</h2>
@@ -48,9 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
             <nav class="nav_header">
                 <menu>
-                    <li><a href="">Shop</a></li>
-                    <li><a href="">Categorie</a></li>
-                    <li><a href="">Contact</a></li>
+                    <li><a href="index.php#trending">Games</a></li>
+                    <li><a href="index.php#contact">Contact</a></li>
                 </menu>
             </nav>
             <button class="log_in" onclick="show()">Inloggen</button>
@@ -71,7 +71,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="sign_up">Nog geen lid? <a class="make_acc" href=""> Maak hier een account</a></div>
                 </form>
             </div>
-
         </div>
     </header>
 
@@ -123,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- trending section -->
         <!-- kopje -->
         <section>
-            <header class="header_trending">
+            <header id="trending" class="header_trending">
                 <div class="header" id="trending">
                     <i class="fa-solid fa-fire-flame-curved" id="flame_trending"></i>
                     <h2 class="kopje_trending_games">Trending Games</h2>
@@ -192,53 +191,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <?php endforeach; ?>
             </div>
             <!-- contact form -->
-            <header class="header_contact">
+            <header id="contact" class="header_contact">
                 <div class="header" id="trending">
                     <h2 class="kopje_contact">Contact formulier</h2>
                 </div>
             </header>
             <section class="contact_form">
-            <form action="index.php" method="POST" class="contact_content">
-                <ul class="left_side">
-                    <li>
-                        <i class="fa-solid fa-location-dot"></i>
-                        <p class="contact_p">Amsterdam</p>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-envelope"></i>
-                        <p class="contact_p">ma-web@gmail.com</p>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-phone"></i>
-                        <p class="contact_p">+06879254</p>
-                    </li>
-                </ul>
-                <ul class="right_side">
-                    <li class="field">
-                        <input class="contact_input" id="voornaam" name="voornaam" type="text" placeholder="voornaam"
-                            required>
-                    </li>
-                    <li class="field">
-                        <input class="contact_input" id="achternaam" name="achternaam" type="text" placeholder="achternaam"
-                            required>
-                    </li>
-                    <li class="field">
-                        <input class="contact_input" id="email" name="email" type="email" placeholder="email" required>
-                    </li>
-                    <li class="field">
-                        <textarea class="contact_textarea" id="bericht" name="bericht" placeholder="bericht" rows="4"
-                            cols="50" required></textarea>
-                    </li>
-                    <button class="send" type="submit" value="submit">Opsturen</button>
-                </ul>
-            </form>
-
+                <form action="index.php" method="POST" class="contact_content">
+                    <ul class="left_side">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p class="contact_p">Amsterdam</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <p class="contact_p">ma-web@gmail.com</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <p class="contact_p">+06879254</p>
+                        </li>
+                    </ul>
+                    <ul class="right_side">
+                        <li class="field">
+                            <input class="contact_input" id="voornaam" name="voornaam" type="text" placeholder="voornaam" required>
+                        </li>
+                        <li class="field">
+                            <input class="contact_input" id="achternaam" name="achternaam" type="text" placeholder="achternaam" required>
+                        </li>
+                        <li class="field">
+                            <input class="contact_input" id="email" name="email" type="email" placeholder="email" required>
+                        </li>
+                        <li class="field">
+                            <textarea class="contact_textarea" id="bericht" name="bericht" placeholder="bericht" rows="4" cols="50" required></textarea>
+                        </li>
+                        <button class="send" type="submit" value="submit">Opsturen</button>
+                    </ul>
+                </form>
+            </section>
         </section>
-
-        </section>
+        <footer>
+            <span>Xlr8</span>
+        </footer>
     </main>
-
-
 </body>
 
 </html>

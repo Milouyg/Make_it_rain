@@ -184,6 +184,8 @@ span {
 }
 
 @media screen and (max-width: 40.625rem) {
-    
+    .inputs_filters_games{
+        margin-bottom: 5rem;
+    }
 }
 
