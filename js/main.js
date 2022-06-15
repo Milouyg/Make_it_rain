@@ -19,6 +19,11 @@ function show() {
     }
 }
 
+const closeBtn = document.getElementById("close_btn");
+closeBtn.onclick = function () {
+    document.getElementById("container_logIn").style.display = "none";
+}
+
 // Trending Games Filters
 let allTrendingGames = document.getElementsByClassName("trending_card");
 // let filters = document.getElementsByClassName("filter_trending_cards");
@@ -168,12 +173,5 @@ sport.onchange = function () {
         }
     }
 }
-
-// Hamburger menu
-
-// const hamburger = document.getElementById("hambuger");
-// hamburger.onclick = function () {
-    
-// }
 
 

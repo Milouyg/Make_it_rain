@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </nav>
             <button class="log_in" onclick="show()">Inloggen</button>
             <div class="container_logIn" id="container_logIn">
-                <label for="show" class="close_btn fas fa-times"></label>
+                <label id="close_btn" for="show" class="close_btn fas fa-times"></label>
                 <div class="text">Login Form</div>
                 <form>
                     <div class="data">
