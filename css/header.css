@@ -35,9 +35,9 @@ html {
     margin: 0 auto;
 }
 
-.mobile_menu {
+/* .mobile_menu {
     display: none;
-}
+} */
 
 .logo{
     display: flex;
@@ -121,7 +121,7 @@ menu li a:hover {
 
 
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 62.5rem) {
 
     header {
         position: relative;
@@ -143,10 +143,10 @@ menu li a:hover {
         margin: 0 auto;
     }
 
-    .mobile_menu {
+    /* .mobile_menu {
         font-size: 3rem;
         color: white;
-    }
+    } */
 
     menu {
         display: flex;
@@ -185,7 +185,7 @@ menu li a:hover {
 }
 
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 53.125rem) {
 
     header {
         position: relative;
@@ -208,9 +208,9 @@ menu li a:hover {
         position: relative;
     }
 
-    .mobile_menu {
+    /* .mobile_menu {
         display: flex;
-    }
+    } */
 
     .search_box {
         width: 100%;
@@ -220,7 +220,13 @@ menu li a:hover {
     }
 
     .nav_header {
-        display: none;
+        display: block;
+    }
+
+    .nav_items{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .search_box input {
@@ -239,7 +245,7 @@ menu li a:hover {
     }
 
     menu {
-        display: none;
+        display: block;
     }
 
     .inloggen {
@@ -252,3 +258,97 @@ menu li a:hover {
     }
 
 }
+
+@media screen and (max-width: 33.125rem){
+    /* 530 */
+    main{
+        padding-top: 10rem;
+        position: relative;
+    }
+
+    .search_box input {
+        position: absolute;
+        top: 5rem;
+    }
+
+    .search_box button {
+        top: 5rem;
+    }
+
+    .nav_items {
+        display: flex;
+        position: absolute;
+        z-index: 2;
+        top: 6.8rem;
+        left: 10%;
+        gap: 15rem;
+    }
+
+    menu li a{
+        width: 200%;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 28.125rem){
+    .nav_items {
+        display: flex;
+        position: absolute;
+        z-index: 2;
+        top: 6.8rem;
+        left: 10%;
+        gap: 15rem;
+    }
+
+    menu li a{
+        width: 200%;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width: 31.25rem){
+    .nav_items {
+        display: flex;
+        position: absolute;
+        z-index: 2;
+        top: 6.8rem;
+        left: 10%;
+        gap: 10rem;
+    }
+
+    menu li a{
+        width: 180%;
+    }
+}
+
+@media screen and (max-width: 26.875rem){
+    /* 430 */
+    main{
+        padding-top: 10rem;
+        position: relative;
+    }
+
+    .search_box input {
+        position: absolute;
+        top: 5rem;
+    }
+
+    .search_box button {
+        top: 5rem;
+    }
+
+    .nav_items {
+        display: flex;
+        position: absolute;
+        justify-content: space-around;
+        z-index: 2;
+        left: 14%;
+        gap: 8rem;
+    }
+
+    menu li a{
+        width: 150%;
+    }
+}
+
+

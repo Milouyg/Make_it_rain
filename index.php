@@ -36,9 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Navigatie -->
     <header class="header_navigatie">
         <div class="container">
-            <label class="mobile_menu">
-                <i class="fa fa-bars hamburger"></i>
-            </label>
             <figure class="logo">
                 <h2 class="logo">Xlr8</h2>
                 <!-- <img class="google" src="img/logo.png" alt=""> -->
@@ -48,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
             <nav class="nav_header">
-                <menu>
+                <menu class="nav_items">
                     <li><a href="index.php#trending">Games</a></li>
                     <li><a href="index.php#contact">Contact</a></li>
                 </menu>

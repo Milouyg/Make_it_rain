@@ -285,7 +285,7 @@ video {
 
 @media screen and (max-width: 43.75rem) {
     .reviews {
-        width: 110%;
+        width: 100%;
     }
 }
 
