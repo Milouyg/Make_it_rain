@@ -2,14 +2,60 @@
 require "functions.php"; // mag ook include zijn
 $connection = dbConnect();
 
+$voornaam = "";
+$achternaam = "";
+$email = "";
+$bericht = "";
+
+// Opslag variabele (array) voor errors
+$errors = [];
+
 $trending_games = $connection->query("SELECT * FROM `games` WHERE beoordelingen > 93");
 $games = $connection->query("SELECT * FROM `games` WHERE beoordelingen < 94");
 
 // Checken of er gegevens zijn opgestuurd
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Gegevens tonen
-    print_r($_POST);
-    exit;
+    $voornaam = $_POST["voornaam"];
+    $achternaam = $_POST["achternaam"];
+    $email = $_POST["email"];
+    $bericht = $_POST["bericht"];
+    $tijdstip = date("Y-m-d H:i:s");
+
+    // Fouten controleren / valideren van input
+    if (isEmpty($voornaam)) {
+        $errors["voornaam"] = "vul uw voornaam in a.u.b.";
+    }
+    if (isEmpty($achternaam)) {
+        $errors["achternaam"] = "vul uw achternaam in a.u.b.";
+    }
+    if (!isValidEmail($email)) {
+        $errors["email"] = "Dit is geen geldig email adres!";
+    }
+    if (!hasMinLength($bericht, 5)) {
+        $errors["email"] = "Vul minimaal 5 tekens in.";
+    }
+    // print_r($errors);
+
+    // Wanneer er 0 foutmeldingen zijn, dan wordt deze if uitgevoerd
+    if (count($errors) == 0) {
+        $sql = "INSERT INTO `contact_formulier` (`voornaam`, `achternaam`, `email`, `bericht`, `tijdstip`) 
+            VALUES (:voornaam, :achternaam, :email, :bericht, :tijdstip);";
+        $statement = $connection->prepare($sql);
+        $params = [
+            "voornaam" => $voornaam,
+            "achternaam" => $achternaam,
+            "email" => $email,
+            "bericht" => $bericht,
+            "tijdstip" => $tijdstip
+        ];
+
+        $statement->execute($params);
+
+        // Stuur bezoeker door naar bedankt pagina
+        header("location: bedankt.html");
+        exit;
+    }
 }
 ?>
 
@@ -194,7 +240,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </header>
             <section class="contact_form">
-                <form action="index.php" method="POST" class="contact_content">
+                <form action="index.php" method="POST" class="contact_content" novalidate>
                     <ul class="left_side">
                         <li>
                             <i class="fa-solid fa-location-dot"></i>
@@ -211,16 +257,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </ul>
                     <ul class="right_side">
                         <li class="field">
-                            <input class="contact_input" id="voornaam" name="voornaam" type="text" placeholder="voornaam" required>
+                            <input class="contact_input" value="<?php echo $voornaam;?>" id="voornaam" name="voornaam" type="text" placeholder="voornaam" required>
+                            <?php if(!empty($errors["voornaam"]) ): ?>
+                            <p class= form_error><?php echo $errors["voornaam"]?></p>
+                            <?php endif;?>
                         </li>
                         <li class="field">
-                            <input class="contact_input" id="achternaam" name="achternaam" type="text" placeholder="achternaam" required>
+                            <input class="contact_input" value="<?php echo $achternaam;?>" id="achternaam" name="achternaam" type="text" placeholder="achternaam" required>
+                            <?php if(!empty($errors["achternaam"]) ): ?>
+                            <p class= form_error><?php echo $errors["achternaam"]?></p>
+                            <?php endif;?>
                         </li>
                         <li class="field">
-                            <input class="contact_input" id="email" name="email" type="email" placeholder="email" required>
+                            <input class="contact_input" value="<?php echo $email;?>" id="email" name="email" type="email" placeholder="email" required>
+                            <?php if(!empty($errors["email"]) ): ?>
+                            <p class= form_error><?php echo $errors["email"]?></p>
+                            <?php endif;?>
                         </li>
                         <li class="field">
-                            <textarea class="contact_textarea" id="bericht" name="bericht" placeholder="bericht" rows="4" cols="50" required></textarea>
+                            <textarea class="contact_textarea" id="bericht" name="bericht" placeholder="Vul uw vraag of bericht in" rows="4" cols="50" required><?php echo $bericht;?>"<textarea>
+                                
+                            <?php if(!empty($errors["bericht"]) ): ?>
+                            <p class= form_error><?php echo $errors["bericht"]?></p>
+                            <?php endif;?>
                         </li>
                         <button class="send" type="submit" value="submit">Opsturen</button>
                     </ul>

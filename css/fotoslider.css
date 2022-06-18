@@ -117,10 +117,27 @@ figure>.foto {
     background: red;
 }
 
-@media screen and (min-width: 810px) {
+@media screen and (max-width: 50.625rem) {
     .fotoslider {
         padding: 0;
         display: flex;
         position: relative;
+    }
+}
+
+@media screen and (max-width: 43.75rem){
+     /* 700 */
+    .manual_btn {
+        border: 0.5rem solid rgb(75,25,119);
+        padding: 3%;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 1s;
+    }
+}
+
+@media screen and (max-width: 34.375rem){
+    .manual_btn{
+        display: none;
     }
 }

@@ -102,6 +102,10 @@
     background: rgb(75,25,119);
 }
 
+.form_error{
+    color: red;
+}
+
 @media screen and (max-width: 78.125rem){
     /* 1250px */
     .left_side {
