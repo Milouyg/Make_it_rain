@@ -68,30 +68,29 @@ menu li a {
     display: inline-block;
     text-align: center;
     width: 12rem;
-    color: black;
+    color: white;
     background: rgb(182,112,243);
     padding: 0.75rem 1rem;
-    border: 0.25rem solid rgb(75,25,119);
     border-radius: 1.5rem;
 }
 
 menu li a:hover {
     background: #5f0bb39b;
-    color: white;
+    color: black;
 }
 
 .log_in{
-    color: black;
+    color: white;
     font-size: 2rem;
     text-align: center;
-    border: 0.25rem solid rgb(75,25,119);
+    border: none;
     background-color: rgb(182,112,243);
     padding: 0.75rem 1.5rem;
     border-radius: 1.5rem;
 }
 
 .log_in:hover {
-    color: white;
+    color: black;
 }
 
 .search_box {
@@ -114,9 +113,16 @@ menu li a:hover {
     width: 6rem;
     height: 100%;
     border-radius: 1rem;
+    border: none;
     position: absolute;
     right: 0;
-    border: 0.3rem solid black;
+    background: #DFDFDE;
+    font-size: 2rem;
+    color: rgb(105,35,166);
+}
+
+.search_box button:hover{
+    cursor: pointer;
 }
 
 

@@ -15,6 +15,7 @@
     flex-wrap: wrap;
     margin: 0 auto;
     position: relative;
+    height: 50rem;
 }
 
 .contact_form>.contact_content>ul {
@@ -31,6 +32,7 @@
     gap: 4.5rem;
     position: relative;
     text-align: center;
+    height: 47rem;
 }
 
 .contact_form>.contact_content .left_side::before {
@@ -43,7 +45,7 @@
 }
 
 .field {
-    margin-top: 4.5rem;
+    margin-top: 2.5rem;
     display: flex;
     flex-direction: column;
     
@@ -85,6 +87,7 @@
     height: 47rem;
     background: rgb(223,193,249);
     padding-left: 5rem;
+    padding-top: 2rem;
 }
 
 .send {
@@ -99,11 +102,13 @@
 
 .send:hover{
     cursor: pointer;
-    background: rgb(75,25,119);
+    color: white;
+    background: rgb(105,35,166);
 }
 
 .form_error{
     color: red;
+    padding-left: 1rem;
 }
 
 @media screen and (max-width: 78.125rem){
@@ -127,7 +132,7 @@
 
     .right_side {
         width: 70rem;
-        height: 38rem;
+        height: 47rem;
         padding-left: 5rem;
     }
 
@@ -147,7 +152,11 @@
     /* 1000px */
 
     .contact_form{
-        height: 84vh;
+        height: 90vh;
+    }
+
+    .contact_content{
+        height: 54rem;
     }
     
     .left_side {
@@ -157,6 +166,10 @@
         display: flex;
         flex-direction: row;
         text-align: center;
+    }
+
+    .right_side{
+        height: 39rem;
     }
 
     .contact_form>.contact_content .left_side::before {
@@ -178,7 +191,7 @@
         padding: 1rem;
         font-size: 150%;
         text-align: center;
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
 
     .contact_textarea{
@@ -197,6 +210,10 @@
         align-items: center;
         text-align: center;
         padding-left: 0rem;
+    }
+
+    .send{
+        margin-top: 1rem;
     }
 }
 
@@ -233,6 +250,7 @@
         align-items: center;
         text-align: center;
         padding-left: 0rem;
+        height: 44rem;
     }
     
     .send{
@@ -345,7 +363,6 @@
 
     .contact_textarea{
         height: 10rem;
-        margin-bottom: 1rem;
     }
 
     .right_side{

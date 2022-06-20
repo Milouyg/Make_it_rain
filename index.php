@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $statement->execute($params);
 
         // Stuur bezoeker door naar bedankt pagina
-        header("Location: bedankt.html");
+        header("location: bedankt.html");
         exit;
     }
 }
@@ -98,15 +98,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </nav>
             <button class="log_in" onclick="show()">Inloggen</button>
             <div class="container_logIn" id="container_logIn">
-                <label id="close_btn" for="show" class="close_btn fas fa-times"></label>
+                <label id="close_btn" class="close_btn fas fa-times"></label>
                 <div class="text">Login Form</div>
                 <form>
                     <div class="data">
                         <label for="email">Email</label>
-                        <input type="email" id="email" required>
+                        <input type="email" required>
                     </div>
                     <div class="data">
-                        <label for="password">Wachtwoord</label>
+                        <label>Wachtwoord</label>
                         <input type="password" required>
                         <div class="forgot_password"><a href="">Wachtwoord vergeten</a></div>
                     </div>
@@ -166,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- kopje -->
         <section>
             <header id="trending" class="header_trending">
-                <div class="header" id="trending">
+                <div class="header">
                     <i class="fa-solid fa-fire-flame-curved" id="flame_trending"></i>
                     <h2 class="kopje_trending_games">Trending Games</h2>
                 </div>
@@ -189,7 +189,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="box_text_trending">
                             <h2 class="titel_game"><?php echo $row["titel"]; ?></h2>
                             <h3 class="genre"><?php echo $row["genre"]; ?></h3>
-                            <span class="price"><?php echo $row["prijzen"]; ?></span>
+                            <span class="price">&#x20AC;<?php echo $row["prijzen"]; ?></span>
                             <span class="percentage"><?php echo $row["beoordelingen"]; ?>%</span>
                             <a class="view" href="game_view.php?id=<?php echo $row["id"]; ?>">weergave</a>
                         </div>
@@ -198,7 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
 
             <header class="header_game">
-                <div class="header" id="trending">
+                <div class="header">
                     <i class="fa-solid fa-fire-flame-curved" id="flame_game"></i>
                     <h2 class="kopje_games">Games</h2>
                 </div>
@@ -226,7 +226,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="box_text_game">
                             <h2 class="titel_game"><?php echo $row["titel"]; ?></h2>
                             <h3 class="genre"><?php echo $row["genre"]; ?></h3>
-                            <span class="price"><?php echo $row["prijzen"]; ?></span>
+                            <span class="price">&#x20AC;<?php echo $row["prijzen"]; ?></span>
                             <span class="percentage"><?php echo $row["beoordelingen"]; ?>%</span>
                             <a class="view" href="game_view.php?id=<?php echo $row["id"]; ?>">weergave</a>
                         </div>
@@ -235,7 +235,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
             <!-- contact form -->
             <header id="contact" class="header_contact">
-                <div class="header" id="trending">
+                <div class="header">
                     <h2 class="kopje_contact">Contact formulier</h2>
                 </div>
             </header>
