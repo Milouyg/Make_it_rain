@@ -6,7 +6,7 @@ setInterval(function () {
     if (counter > 4) {
         counter = 1;
     }
-}, 3000)
+}, 5000)
 
 // Login systeem
 function show() {

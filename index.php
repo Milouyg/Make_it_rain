@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors["email"] = "Dit is geen geldig email adres!";
     }
     if (!hasMinLength($bericht, 5)) {
-        $errors["email"] = "Vul minimaal 5 tekens in.";
+        $errors["bericht"] = "Vul minimaal 5 tekens in.";
     }
     // print_r($errors);
 
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $statement->execute($params);
 
         // Stuur bezoeker door naar bedankt pagina
-        header("location: bedankt.html");
+        header("Location: bedankt.html");
         exit;
     }
 }
@@ -275,7 +275,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <?php endif;?>
                         </li>
                         <li class="field">
-                            <textarea class="contact_textarea" id="bericht" name="bericht" placeholder="Vul uw vraag of bericht in" rows="4" cols="50" required><?php echo $bericht;?>"<textarea>
+                            <textarea class="contact_textarea" id="bericht" name="bericht" placeholder="Vul uw vraag of bericht in" rows="4" cols="50" required><?php echo $bericht;?></textarea>
                                 
                             <?php if(!empty($errors["bericht"]) ): ?>
                             <p class= form_error><?php echo $errors["bericht"]?></p>

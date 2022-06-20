@@ -161,6 +161,10 @@ video {
     border-radius: 2rem;
     flex-grow: 1;
     font-size: 130%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .stars {

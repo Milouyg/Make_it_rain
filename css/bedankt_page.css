@@ -1,0 +1,39 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(182,112,243);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 75%;
+    min-height: 30%;
+    background: white;
+    box-shadow: 0 1rem 1rem 0 rgba(0,0,0,0.3);
+}
+
+header{
+    margin: 1rem;
+}
+
+p{
+    margin: 1rem;
+}
+
+a{
+    margin: 1rem;
+}

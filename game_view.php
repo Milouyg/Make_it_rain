@@ -71,36 +71,41 @@ $game_detail = $statement->fetch(PDO::FETCH_ASSOC);
         <section class="section_reviews">
             <ul class="reviews">
                 <li class="review_list">
-                    <span>Naam</span>
+                    <span>Kayne</span>
                     <div class="stars">
                     &#9733;
                     &#9733;
                     &#9733;
+                    &#9733;
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ad reprehenderit id impedit accusamus porro aspernatur est cum esse facilis molestias distinctio minus iste similique odit maxime asperiores rerum itaque!
+                    Dit moet het beste spel zijn dat ik ooit in dit jaar heb gespeeld, prachtig verhaal, geweldige muziekambiance en een hele diversiteit aan mechanisme in de gameplay. Ik zou dit spel volledig aanbevelen aan alle mensen uit alle hoeken van de wereld...
                     </p>
                 </li>
                 <li class="review_list">
-                <span>Naam</span>
+                <span>Lisa</span>
                 <div class="stars">
                     &#9733;
                     &#9733;
                     &#9733;
+                    &#9733;
+                    &#9733;
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ad reprehenderit id impedit accusamus porro aspernatur est cum esse facilis molestias distinctio minus iste similique odit maxime asperiores rerum itaque!
+                    It takes two is waarschijnlijk een van de beste co-op games die ik heb gespeeld. Het levelontwerp is ongelooflijk creatief en divers. De gameplay en puzzels zijn vloeiend. De soundtrack is geweldig. De graphics zijn prachtig.
+                    En je hoeft maar één exemplaar te kopen om met een vriend te spelen.
                     </p>
                 </li>
                 <li class="review_list">
-                <span>Naam</span>
+                <span>Emma</span>
                 <div class="stars">
                     &#9733;
                     &#9733;
                     &#9733;
+                    &#9733;
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, ad reprehenderit id impedit accusamus porro aspernatur est cum esse facilis molestias distinctio minus iste similique odit maxime asperiores rerum itaque!
+                    Beste spel dat ik in een tijdje heb gespeeld. Normaal speel ik geen co-op games (heb geen vrienden), maar ik had een ontploffing met de mensen die ik heb gevraagd om mee te spelen.
                     </p>
                 </li>
             </ul>
