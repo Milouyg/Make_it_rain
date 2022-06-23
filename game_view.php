@@ -45,7 +45,7 @@ $game_detail = $statement->fetch(PDO::FETCH_ASSOC);
                 </p>
             </article>
             <article class="trailer">
-                <video src="<?php echo $game_detail["trailer"] ?>" controls autoplay></video>
+                <video src="video/<?php echo $game_detail["trailer"] ?>" controls autoplay></video>
             </article>
         </section>
         <section class="bottom">

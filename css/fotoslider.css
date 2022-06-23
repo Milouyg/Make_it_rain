@@ -1,6 +1,6 @@
 /* fotoslider */
 main{
-    background: rgb(165,76,255);
+    background: rgb(244 234 255);
 }
 
 .fotoslider {
@@ -49,7 +49,7 @@ figure>.foto {
 
 .manual_btn {
     border: 0.5rem solid rgb(75,25,119);
-    padding: 2%;
+    padding: 1.5%;
     border-radius: 50%;
     cursor: pointer;
     transition: 1s;
@@ -129,7 +129,6 @@ figure>.foto {
      /* 700 */
     .manual_btn {
         border: 0.5rem solid rgb(75,25,119);
-        padding: 3%;
         border-radius: 50%;
         cursor: pointer;
         transition: 1s;

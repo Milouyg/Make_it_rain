@@ -236,6 +236,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- contact form -->
             <header id="contact" class="header_contact">
                 <div class="header">
+                    <i class="fa-solid fa-file-lines" id="file"></i>
                     <h2 class="kopje_contact">Contact formulier</h2>
                 </div>
             </header>
@@ -281,7 +282,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <p class= form_error><?php echo $errors["bericht"]?></p>
                             <?php endif;?>
                         </li>
-                        <button class="send" type="submit" value="submit">Opsturen</button>
+                        <li><button class="send" type="submit" value="submit">Opsturen</button></li>
                     </ul>
                 </form>
             </section>
